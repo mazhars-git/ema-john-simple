@@ -1,0 +1,25 @@
+.shipment-form{
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(45, 45, 56);
+    width: 312px;
+}
+
+.shipment-form input{
+    display: block;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 10px 5px;
+    width: 300px;
+    margin-top: 20px;
+}
+.error{
+    color: red;
+}
+.submit-btn{
+   background-color: tomato;
+   color: white;
+   width: 50% !important;
+   margin: auto;
+}
