@@ -21,7 +21,7 @@ const Review = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
-        fetch('http://localhost:4000/productByKeys', {
+        fetch('https://dry-journey-54702.herokuapp.com/productByKeys', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json',

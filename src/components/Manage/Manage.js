@@ -4,7 +4,7 @@ const Manage = () => {
 
     const handleAddProducts = () => {
         const product = {};
-        fetch('http://localhost:4000/addProduct', {
+        fetch('https://dry-journey-54702.herokuapp.com/addProduct', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json',

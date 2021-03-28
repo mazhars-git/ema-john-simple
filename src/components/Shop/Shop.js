@@ -10,7 +10,7 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/products')
+        fetch('https://dry-journey-54702.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
@@ -18,7 +18,7 @@ const Shop = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
-        fetch('http://localhost:4000/productByKeys', {
+        fetch('https://dry-journey-54702.herokuapp.com/productByKeys', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json',

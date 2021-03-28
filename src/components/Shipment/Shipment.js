@@ -11,7 +11,7 @@ const Shipment = () => {
       const savedCart = getDatabaseCart();
       const orderDetails = {...loggedInUser, products: savedCart, shipment: data, orderTime: new Date()}
       
-      fetch('http://localhost:4000/addOrder', {
+      fetch('https://dry-journey-54702.herokuapp.com/addOrder', {
         method: 'POST',
         headers: {
           'Content-Type' : 'application/json'
