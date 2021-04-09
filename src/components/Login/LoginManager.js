@@ -21,6 +21,7 @@ export const handleGoogleSignIn = () => {
         photo: photoURL,
         success: true
       }
+      setUserToken();
       return signedInUser;
 
       console.log(displayName, photoURL, email)
@@ -28,6 +29,14 @@ export const handleGoogleSignIn = () => {
     .catch(err =>{
       console.log(err.message);
     })
+}
+
+const setUserToken = () => {
+  firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+    sessionStorage.setItem('token', idToken);
+  }).catch(function(error) {
+    // Handle error
+  });
 }
 
 export const handleFbSignIn = () => {

@@ -8,12 +8,13 @@ import { Link } from 'react-router-dom';
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
-        fetch('https://dry-journey-54702.herokuapp.com/products')
+        fetch('https://dry-journey-54702.herokuapp.com/products?search='+ search)
         .then(res => res.json())
         .then(data => setProducts(data))
-    }, [])
+    }, [search])
 
     useEffect(() => {
         const savedCart = getDatabaseCart();
@@ -28,6 +29,10 @@ const Shop = () => {
         .then(res => res.json())
         .then(data => setCart(data))
     },[])
+
+    const handleSearch = event => {
+        setSearch(event.target.value);
+    }
 
     const handleAddProduct = (product) =>{
         const toBeAddedKey = product.key;
@@ -51,6 +56,7 @@ const Shop = () => {
 
         <div className="shop-container">
            <div className="product-container">
+               <input type="text" onBlur={handleSearch} className="product-search" placeholder="search product"/>
                 {
                     products.map(pd => <Product
                         showAddToCart={true} 
